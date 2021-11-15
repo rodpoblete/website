@@ -12,9 +12,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-g)z#03-q3dj(d898n$kcx+$1y5n#riq3i(jrrt&mi2a$l56act"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['peaceful-fjord-33679.herokuapp.com', 'rodpoblete.xyz', 'www.rodpoblete.xyz']
+ALLOWED_HOSTS = [
+    "peaceful-fjord-33679.herokuapp.com",
+    "rodpoblete.xyz",
+    "www.rodpoblete.xyz",
+]
 
 
 # Application definition
