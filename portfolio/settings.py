@@ -31,7 +31,21 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "jobs",
+    "storages",
 ]
+
+AWS_STORAGE_BUCKET_NAME = 'django-portafolio-rodpoblete'
+AWS_S3_REGION_NAME = 'us-west-2'  # e.g. us-east-2
+AWS_ACCESS_KEY_ID = 'AKIA4OXOEBKUPFL5PVMZ'
+AWS_SECRET_ACCESS_KEY = '2joTP6l+otaqN9w9PDIo8iaTyQe42ps8wDxuGZpI'
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+AWS_DEFAULT_ACL = None
+
+STATICFILES_LOCATION = 'static'
+STATIC_FILES_STORAGE = 'custom_storages.StaticStorage'
+
+MEDIAFILES_LOCATION = 'media'
+DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
