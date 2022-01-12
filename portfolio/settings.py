@@ -9,7 +9,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-g)z#03-q3dj(d898n$kcx+$1y5n#riq3i(jrrt&mi2a$l56act"
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -34,10 +34,10 @@ INSTALLED_APPS = [
     "storages",
 ]
 
-AWS_STORAGE_BUCKET_NAME = 'django-portafolio-rodpoblete'
-AWS_S3_REGION_NAME = 'us-west-2'  # e.g. us-east-2
-AWS_ACCESS_KEY_ID = 'AKIA4OXOEBKUPFL5PVMZ'
-AWS_SECRET_ACCESS_KEY = '2joTP6l+otaqN9w9PDIo8iaTyQe42ps8wDxuGZpI'
+AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME')
+AWS_S3_REGION_NAME = os.getenv('AWS_S3_REGION_NAME')
+AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
 AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 AWS_DEFAULT_ACL = None
 
@@ -84,10 +84,10 @@ WSGI_APPLICATION = "portfolio.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "dkib67nipc95b",
-        "USER": "bkqbxgglnxxdob",
-        "PASSWORD": "4a8130973bc2e84165c0c937bfb23e5900f8be6c8be078f8eb20adc1845c44e8",
-        "HOST": "ec2-3-213-41-172.compute-1.amazonaws.com",
+        "NAME": os.getenv('DB_NAME'),
+        "USER": os.getenv('DB_USER'),
+        "PASSWORD": os.getenv('DB_PASSWORD'),
+        "HOST": os.getenv('DB_HOST'),
         "PORT": 5432,
     }
 }
